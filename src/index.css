@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .list {
+    @apply text-gray-500 space-x-2 w-full hover:text-white hover:bg-gray-700/40  flex items-center px-10 py-2 mb-4;
+  }
+  .topCategory {
+    @apply text-blue-600 bg-gray-500/40 p-2 py-3 flex items-center justify-center  text-xl rounded-md hover:bg-gray-300/30;
+  }
+  .inputBox {
+    @apply bg-gray-300/60  py-1 px-3 xl:w-80 w-60 duration-500 flex items-center justify-center rounded-md outline-none text-gray-600;
+  }
+  .btn {
+    @apply bg-blue-600  px-3 py-1 text-white active:bg-blue-700 ring-2 select-none;
+  }
+  table thead tr th {
+    @apply text-gray-200 font-light h-10;
+  }
+  table tbody #item {
+    @apply flex items-center justify-between;
+  }
+  table tbody input[type="checkbox"] {
+    @apply w-4 h-4 ml-3 ;
+  }
+  table tbody #active {
+    @apply flex w-24 h-8 justify-center items-center bg-blue-600/80 rounded-full;
+  }
+  table tbody #sold-out {
+    @apply flex w-24 h-8 justify-center items-center bg-blue-400/80 rounded-full;
+  }
+  table tbody tr {
+    @apply bg-gray-200/20 text-center;
+  }
+  table tbody tr:nth-child(even) {
+    @apply bg-blue-300/20;
+  }
+  table tbody tr td {
+    @apply text-white h-14;
+  }
+  table tbody td #product-img {
+    @apply w-11 h-11 rounded-md;
+  }
+}
