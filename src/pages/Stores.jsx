@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ManchesterUK from "/src/assets/store-manchester-uk.jpeg";
-import YorkshireUK from "/src/assets/store-yorkshire-uk.jpeg";
-import HullUK from "/src/assets/store-hull-uk.jpeg";
-import LeicesterUK from "/src/assets/store-leicester-uk.jpeg";
+import { stores } from "../constants";
 
 const Stores = () => {
   return (
@@ -58,60 +56,34 @@ const Stores = () => {
       {/* body store  */}
       <div id="container">
         <div className="my-4 grid sm:grid-cols-4 grid-cols-2 gap-4">
-          <motion.article
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="p-4 rounded-md bg-gray-500/40 hover:outline outline-blue-600 focus:outline-blue-600"
-          >
-            <div className="rounded-md overflow-hidden">
-              <img
-                src={ManchesterUK}
-                className="hover:scale-[1.1] duration-300"
-              />
-            </div>
-            <span className="text-gray-400 flex mt-2">Manchester UK</span>
-          </motion.article>
-          <motion.article
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="p-4 rounded-md bg-gray-500/40  hover:outline outline-blue-600 focus:outline-blue-600"
-          >
-            <div className="rounded-md overflow-hidden">
-              <img src={YorkshireUK} />
-            </div>
-            <span className="text-gray-400 flex mt-2">Yorkshire UK</span>
-          </motion.article>
-
-          <motion.article
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-          className="p-4 rounded-md bg-gray-500/40 hover:outline outline-blue-600 focus:outline-blue-600">
-            <div className="rounded-md overflow-hidden">
-              <img src={HullUK} />
-            </div>
-            <span className="text-gray-400 flex mt-2">Hull UK</span>
-          </motion.article>
-          <motion.article
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-          className="p-4 rounded-md bg-gray-500/40 hover:outline outline-blue-600 focus:outline-blue-600">
-            <div className="rounded-md overflow-hidden">
-              <img src={LeicesterUK} />
-            </div>
-            <span className="text-gray-400 flex mt-2">Leicester UK</span>
-          </motion.article>
+          {stores.map((store, index) => {
+            return (
+              <motion.article
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 * index }}
+                key={index}
+                className="p-4 rounded-md bg-gray-500/40 hover:outline outline-blue-600 focus:outline-blue-600"
+              >
+                <div className="rounded-md overflow-hidden">
+                  <img
+                    src={store.img}
+                    className="hover:scale-[1.1] duration-300"
+                  />
+                </div>
+                <span className="text-gray-400 flex mt-2">{store.name}</span>
+              </motion.article>
+            );
+          })}
         </div>
         <div>
           {/* manchester, uk */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
-          className="bg-gray-500/50 sm:w-[500px] w-full rounded-md p-3 px-5">
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: .5, delay: 0.7 }}
+            className="bg-gray-500/50 sm:w-[500px] w-full rounded-md p-3 px-5"
+          >
             <div className="flex justify-between items-center">
               <h2 className="text-gray-200 text-xl">Manchester, UK</h2>
               <span className="text-xl text-gray-200 duration-300 hover:text-white ">

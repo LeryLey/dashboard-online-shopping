@@ -1,45 +1,8 @@
 import { Link } from "react-router-dom";
-import Items from "../components/Items";
 import { motion } from "framer-motion";
+import { items } from "../constants";
+import { categories } from "../constants";
 const Home = () => {
-  let items = [
-    {
-      id: 1,
-      qty: 741,
-      span: "Qty",
-      p: "NEW ITEMS",
-    },
-    {
-      id: 2,
-      qty: 123,
-      span: "Qty",
-      p: "NEW ORDERS",
-    },
-    {
-      id: 3,
-      qty: 12,
-      span: "Qty",
-      p: "NEW REFUNDS",
-    },
-    {
-      id: 4,
-      qty: 3,
-      span: "Qty",
-      p: "NEW MESSAGE",
-    },
-    {
-      id: 5,
-      qty: 1,
-      span: "Qty",
-      p: "NEW GROUP",
-    },
-    {
-      id: 6,
-      qty: 203,
-      span: "Qty",
-      p: "NEW FEEDBACK",
-    },
-  ];
   return (
     <div className="space-y-4  w-full duration-500">
       <div className="space-y-7 ">
@@ -51,23 +14,25 @@ const Home = () => {
         >
           Recent activity
         </motion.h2>
-        <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          whileTap={{ x: -100 }}
-          transition={{ duration: 1 }}
-          className="grid md:grid-cols-6 sm:grid-cols-3 gap-4 items-center "
-        >
-          {items.map((item) => {
-            let { qty, span, p, id } = item;
-            return <Items key={id} qty={qty} span={span} txt={p} />;
+        <motion.div className="grid md:grid-cols-6 sm:grid-cols-3 gap-4 items-center ">
+          {items.map((item, index) => {
+            const { qty, span, txt } = item;
+            return (
+              <motion.article
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 * index }}
+                key={index}
+                className="flex flex-col bg-gray-900 hover:bg-gray-800 w-full h-36 rounded-xl text-center justify-center shadow-xl shadow-gray-800 space-y-1  "
+              >
+                <span className="text-blue-600 text-2xl ">{qty}</span>
+                <span className="text-gray-500 ">{span}</span>
+                <span className="text-gray-300 text-sm  font-medium">
+                  {txt}
+                </span>
+              </motion.article>
+            );
           })}
-          {/* <div
-            id="btnNext"
-            className="bg-white/30 rounded-full xl:h-12 xl:w-12 h-10 w-10 flex items-center justify-center text-xl text-gray-900 active:scale-[0.9] active:bg-white/50 duration-200"
-          >
-            <ion-icon name="chevron-forward-outline"></ion-icon>
-          </div> */}
         </motion.div>
       </div>
       <div className="grid sm:grid-cols-2 grid-cols-1  gap-4">
@@ -75,7 +40,7 @@ const Home = () => {
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 1.5 }}
           id="sales"
           className="bg-black/30 w-full h-auto  rounded-md p-4 relative"
         >
@@ -88,7 +53,7 @@ const Home = () => {
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 1.5 }}
           id="topItems"
           className="bg-black/30 w-full h-auto rounded-md p-4 space-y-4 "
         >
@@ -96,37 +61,20 @@ const Home = () => {
             <h2 className="text-gray-300 font-medium text-xl">
               Top Items Categories
             </h2>
-            <Link to={'/category'}>
+            <Link to={"/category"}>
               <a href="#" className="text-blue-600 duration-300">
                 View all
               </a>
             </Link>
           </div>
           <div id="category" className="gap-2 grid grid-cols-4">
-            <span className="topCategory">
-              <ion-icon name="shirt"></ion-icon>
-            </span>
-            <span className="topCategory">
-              <ion-icon name="headset"></ion-icon>
-            </span>
-            <span className="topCategory">
-              <ion-icon name="glasses"></ion-icon>
-            </span>
-            <span className="topCategory">
-              <ion-icon name="briefcase"></ion-icon>
-            </span>
-            <span className="topCategory">
-              <ion-icon name="shirt"></ion-icon>
-            </span>
-            <span className="topCategory">
-              <ion-icon name="headset"></ion-icon>
-            </span>
-            <span className="topCategory">
-              <ion-icon name="glasses"></ion-icon>
-            </span>
-            <span className="topCategory">
-              <ion-icon name="briefcase"></ion-icon>
-            </span>
+            {categories.map((category, index) => {
+              return (
+                <span key={index} className="topCategory">
+                  {category.icon}
+                </span>
+              );
+            })}
           </div>
         </motion.div>
       </div>
@@ -134,7 +82,7 @@ const Home = () => {
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1 }}
+        transition={{ duration: 0.5, delay: 2 }}
         id="list"
         className="grid lg:grid-cols-2 grid-cols-1  gap-4"
       >
@@ -183,7 +131,7 @@ const Home = () => {
         <motion.div
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{ duration: 0.5, delay: 2 }}
           id="storeList"
           className="bg-black/30 w-full h-auto rounded-md p-3"
         >

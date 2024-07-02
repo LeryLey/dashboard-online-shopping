@@ -1,45 +1,7 @@
-import TopCategories from "../components/TopCategories";
 import { motion } from "framer-motion";
 import Pic from "/src//assets/images.jpeg";
 import { useState } from "react";
-let topCategories = [
-  {
-    id: 1,
-    icon: <ion-icon name="shirt"></ion-icon>,
-    txt: "Bottoms",
-    qyt: 49,
-  },
-  {
-    id: 2,
-    icon: <ion-icon name="bag-remove"></ion-icon>,
-    txt: "Jeans",
-    qyt: 49,
-  },
-  {
-    id: 3,
-    icon: <ion-icon name="glasses"></ion-icon>,
-    txt: "Glasses",
-    qyt: 49,
-  },
-  {
-    id: 4,
-    icon: <ion-icon name="shirt"></ion-icon>,
-    txt: "Bottoms",
-    qyt: 49,
-  },
-  {
-    id: 5,
-    icon: <ion-icon name="shirt"></ion-icon>,
-    txt: "Bottoms",
-    qyt: 49,
-  },
-  {
-    id: 6,
-    icon: <ion-icon name="shirt"></ion-icon>,
-    txt: "Bottoms",
-    qyt: 49,
-  },
-];
+import { topCategories } from "../constants";
 const Category = () => {
   const [addCgy, setAddCgy] = useState(false);
   const handleAddCgy = () => {
@@ -83,17 +45,26 @@ const Category = () => {
         </motion.div>
       </div>
       {/* body  */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="grid sm:grid-cols-3 grid-cols-2 gap-4 mt-10"
-      >
-        {topCategories.map((category) => {
-          const { id, icon, txt, qyt } = category;
-          return <TopCategories key={id} icon={icon} txt={txt} qty={qyt} />;
+      <div className="grid sm:grid-cols-3 grid-cols-2 gap-4 mt-10">
+        {topCategories.map((category, index) => {
+          const { icon, txt, qty } = category;
+          return (
+            <motion.article
+              key={index}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 * index }}
+              className="w-full h-auto bg-gray-500/40 rounded-md p-4 hover:scale-[0.9] duration-300"
+            >
+              <div className="w-full p-10 bg-blue-300/40 flex justify-center items-center rounded-md mb-2">
+                <span className="text-gray-100 text-3xl">{icon}</span>
+              </div>
+              <p className="text-white font-medium text-lg">{txt}</p>
+              <span className="text-gray-300">{qty} items</span>
+            </motion.article>
+          );
         })}
-      </motion.div>
+      </div>
       {/* form add category */}
       <div
         className={
@@ -102,14 +73,16 @@ const Category = () => {
             : "absolute w-full left-0 h-full rounded-xl bg-black/40 backdrop-blur-md top-0 flex items-center justify-center overflow-auto duration-500 opacity-100"
         }
       >
-        <h2 className="absolute top-4 left-4 text-2xl text-gray-200">Add Categories</h2>
+        <h2 className="absolute top-4 left-4 text-2xl text-gray-200">
+          Add Categories
+        </h2>
         <form>
           <div className="w-full flex justify-center ">
             <div
               id="addPic"
-              className="w-20 h-20 rounded-full overflow-hidden object-cover"
+              className="w-20 h-20 rounded-full overflow-hidden object-cover ring-2 ring-gray-400"
             >
-              <img src={Pic} className="hover:scale-[1.1] duration-500" />
+              <img src={Pic} className="hover:scale-[1.1] duration-500 " />
             </div>
           </div>
           <div className="full flex flex-col ">
@@ -153,7 +126,10 @@ const Category = () => {
             </div>
           </div>
         </form>
-        <div onClick={handleAddCgy} className="absolute bottom-0 text-gray-500 text-xl hover:-translate-y-1 hover:text-gray-100 duration-300 p-4 ">
+        <div
+          onClick={handleAddCgy}
+          className="absolute bottom-0 text-gray-500 text-xl hover:-translate-y-1 hover:text-gray-100 duration-300 p-4 "
+        >
           <span>
             <ion-icon name="chevron-up"></ion-icon>
           </span>

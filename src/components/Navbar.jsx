@@ -6,7 +6,7 @@ const Navbar = () => {
     setMs(!ms);
   };
   return (
-    <div>
+    <>
       <header className="flex overflow-hidden items-center justify-between px-10 py-4 bg-gray-900 shadow-sm ">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
@@ -67,7 +67,7 @@ const Navbar = () => {
           </div>
         </motion.div>
       </header>
-    </div>
+    </>
   );
 };
 

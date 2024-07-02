@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { links } from "../constants";
 const NavSide = () => {
   const [navSide, setNavSide] = useState(false);
   const handleNavSide = () => {
@@ -28,81 +29,29 @@ const NavSide = () => {
         >
           <ion-icon name="caret-back"></ion-icon>
         </div>
-        <div className="space-y-6 duration-500">
-          <Link to={"/"} className="w-full">
-            <motion.button
+        <ul className="pr-4 space-y-2">
+          {links.map((link, index) => (
+            <motion.li
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="list"
+              transition={{ duration: 0.5, delay: 0.2 * index }}
+              key={index}
+              className="flex items-center px-4 py-1 hover:bg-gray-800 rounded-r-full duration-300 hover:pl-6 "
             >
-              <ion-icon name="home"></ion-icon>
-              <a href="#">Home</a>
-            </motion.button>
-          </Link>
-          <Link to={"/product"} className="w-full">
-            <motion.button
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="list"
-            >
-              <ion-icon name="shirt"></ion-icon>
-              <a href="#">Products</a>
-            </motion.button>
-          </Link>
-          <Link to={"/category"} className="w-full">
-            <motion.button
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="list"
-            >
-              <ion-icon name="locate-outline"></ion-icon>
-              <a href="#">Category</a>
-            </motion.button>
-          </Link>
-          <Link to={"/store"} className="w-full">
-            <motion.button
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="list"
-            >
-              <ion-icon name="storefront"></ion-icon>
-              <a href="#">Stores</a>
-            </motion.button>
-          </Link>
-          <Link to={"/finances"} className="w-full">
-            <motion.button
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="list"
-            >
-              <ion-icon name="stats-chart"></ion-icon>
-              <a href="#">Finances</a>
-            </motion.button>
-          </Link>
-          <Link to={"/setting"} className="w-full">
-            <motion.button
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
-              className="list"
-            >
-              <ion-icon name="cog"></ion-icon>
-              <a href="#">Settings</a>
-            </motion.button>
-          </Link>
-        </div>
+              <Link to={link.path} className="flex items-center gap-2 ">
+                <p>{link.icon}</p>
+                <h2 className="text-lg text-gray-300">{link.title}</h2>
+              </Link>
+            </motion.li>
+          ))}
+        </ul>
         {/* options */}
         <div className="px-10 space-y-2">
           <Link to={"/add-product"}>
             <motion.button
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
               type="button"
               id="addProducts"
               className="flex items-center text-gray-300"
@@ -116,7 +65,7 @@ const NavSide = () => {
           <motion.button
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
             type="button"
             id="logout"
             className="text-red-500 flex items-center"
