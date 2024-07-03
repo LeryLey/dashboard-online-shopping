@@ -15,7 +15,7 @@ import Settings from "/src/pages/Settings";
 import AddProduct from "./AddProduct";
 const RouterApp = () => {
   return (
-    <div className="flex w-full ">
+    <div className="flex w-full">
       <NavSide />
       <div className="w-full h-full rounded-3xl  bg-gray-700 overflow-y-auto overflow-x-hidden  scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-500 p-4 border-blue-600 border-4  lg:translate-y-0  lg:mr-10 mr-4 lg:ml-0 ml-4">
         <Routes>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Img from "/src/assets/images.jpeg";
 import { motion } from "framer-motion";
+import { products } from "../constants";
 const Products = () => {
   return (
     <div id="container-products">
@@ -52,210 +52,43 @@ const Products = () => {
         </div>
       </motion.div>
       {/* product table  */}
-      <table className="w-full my-6">
-        <motion.thead
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="border-b-2 border-t-2 border-blue-500 "
-        >
-          <tr className="py-2">
-            <th></th>
-            <th>Name of Product</th>
-            <th>Status</th>
-            <th>Stock info</th>
-            <th>Category</th>
-            <th>Location</th>
+      <table className="w-full mt-5">
+        <thead className="border-b border-gray-500 h-10">
+          <tr>
+            <th className="text-left"></th>
+            <th className="text-left text-gray-300 font-light">Photo</th>
+            <th className="text-left text-gray-300 font-light">Name of Product</th>
+            <th className="text-left text-gray-300 font-light">Stock info</th>
+            <th className="text-left text-gray-300 font-light">Category</th>
+            <th className="text-left text-gray-300 font-light">Location</th>
           </tr>
-        </motion.thead>
+        </thead>
         <tbody>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="active">Active</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="active">Active</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="active">Active</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="active">Active</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="sold-out">Sold out</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="active">Active</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="active">Active</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="sold-out">Sold out</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="active">Active</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="active">Active</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
-          <motion.tr
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1 }}
-          >
-            <td id="item">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <img src={Img} className="" id="product-img" />
-            </td>
-            <td>Bomber Jacket Male</td>
-            <td>
-              <span id="active">Active</span>
-            </td>
-            <td>12 in stock</td>
-            <td>T-Shirt</td>
-            <td>3 Store</td>
-          </motion.tr>
+          {products.map((product, index) => {
+            return (
+              <motion.tr
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 * index }}
+                key={index}
+              >
+                <td className="text-left">
+                  <input type="checkbox" />
+                </td>
+                <td className="text-left">
+                  <img
+                    src={product.img}
+                    alt="Product Image"
+                    className="w-10 h-10 rounded-md"
+                  />
+                </td>
+                <td className="text-left">{product.name}</td>
+                <td className="text-left">{product.stockInfo}</td>
+                <td className="text-left">{product.category}</td>
+                <td className="text-left">{product.location}</td>
+              </motion.tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

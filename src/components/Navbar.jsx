@@ -41,7 +41,7 @@ const Navbar = () => {
           <div
             id="notification"
             onClick={handle}
-            className="relative text-2xl text-white flex"
+            className="relative text-2xl text-white flex "
           >
             <ion-icon name="notifications-outline"></ion-icon>
             <div

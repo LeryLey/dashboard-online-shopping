@@ -2,6 +2,7 @@ import ManchesterUK from "/src/assets/store-manchester-uk.jpeg";
 import YorkshireUK from "/src/assets/store-yorkshire-uk.jpeg";
 import HullUK from "/src/assets/store-hull-uk.jpeg";
 import LeicesterUK from "/src/assets/store-leicester-uk.jpeg";
+import Img from "/src/assets/images.jpeg";
 
 export const links = [
   {
@@ -209,5 +210,33 @@ export const categories = [
     icon: <ion-icon name="shirt"></ion-icon>,
     txt: "Bottoms",
     qyt: 49,
+  },
+];
+// products
+
+export const products = [
+  {
+    id: 1,
+    img: Img,
+    name: "Product 1",
+    stockInfo: "12 in stock",
+    category: "T-Shirt",
+    location: "3 Store",
+  },
+  {
+    id: 2,
+    img: Img,
+    name: "Product 2",
+    stockInfo: "12 in stock",
+    category: "T-Shirt",
+    location: "3 Store",
+  },
+  {
+    id: 3,
+    img: Img,
+    name: "Product 3",
+    stockInfo: "12 in stock",
+    category: "T-Shirt",
+    location: "3 Store",
   },
 ];
