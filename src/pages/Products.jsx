@@ -11,14 +11,14 @@ const Products = () => {
         transition={{ duration: 1 }}
         className="flex flex-wrap gap-4 items-center justify-between"
       >
-        <h1 className="text-3xl text-gray-200">Products</h1>
+        <h1 className="text-3xl text-gray-600 dark:text-gray-200">Products</h1>
         <div className="flex flex-wrap justify-center items-center gap-4">
           <form action="" className="relative">
             <input
               type="search"
               name="search-product"
               id="search-product"
-              className="inputBox placeholder:text-gray-300 focus:ring-2"
+              className="inputBox placeholder text-gray-600:dark:text-gray-300 bg-black/10 dark:bg-gray-500 focus:ring-2"
               placeholder="Search product"
             />
             <span className="absolute right-2 top-1 text-xl text-gray-700">
@@ -29,7 +29,7 @@ const Products = () => {
             <button
               type="button"
               id="filter-by"
-              className="btn rounded-md flex items-center bg-blue-600/40"
+              className="btn rounded-md flex items-center bg-blue-500 dark:bg-blue-600/40"
             >
               Filter by
               <span className="flex m-1">
@@ -56,11 +56,11 @@ const Products = () => {
         <thead className="border-b border-gray-500 h-10">
           <tr>
             <th className="text-left"></th>
-            <th className="text-left text-gray-300 font-light">Photo</th>
-            <th className="text-left text-gray-300 font-light">Name of Product</th>
-            <th className="text-left text-gray-300 font-light">Stock info</th>
-            <th className="text-left text-gray-300 font-light">Category</th>
-            <th className="text-left text-gray-300 font-light">Location</th>
+            <th className="text-left text-gray-600 dark:text-gray-300 font-light">Photo</th>
+            <th className="text-left text-gray-600 dark:text-gray-300 font-light">Name of Product</th>
+            <th className="text-left text-gray-600 dark:text-gray-300 font-light">Stock info</th>
+            <th className="text-left text-gray-600 dark:text-gray-300 font-light">Category</th>
+            <th className="text-left text-gray-600 dark:text-gray-300 font-light">Location</th>
           </tr>
         </thead>
         <tbody>
@@ -82,10 +82,10 @@ const Products = () => {
                     className="w-10 h-10 rounded-md"
                   />
                 </td>
-                <td className="text-left">{product.name}</td>
-                <td className="text-left">{product.stockInfo}</td>
-                <td className="text-left">{product.category}</td>
-                <td className="text-left">{product.location}</td>
+                <td className="text-left text-gray-500 dark:text-gray-400">{product.name}</td>
+                <td className="text-left text-gray-500 dark:text-gray-400">{product.stockInfo}</td>
+                <td className="text-left text-gray-500 dark:text-gray-400">{product.category}</td>
+                <td className="text-left text-gray-500 dark:text-gray-400">{product.location}</td>
               </motion.tr>
             );
           })}

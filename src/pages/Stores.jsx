@@ -13,14 +13,14 @@ const Stores = () => {
         transition={{ duration: 1 }}
         className="flex flex-wrap gap-4 items-center justify-between"
       >
-        <h1 className="text-3xl text-gray-200">Stores</h1>
+        <h1 className="text-3xl text-gray-600 dark:text-gray-200">Stores</h1>
         <div className="flex flex-wrap justify-center items-center gap-4">
           <form action="" className="relative">
             <input
               type="search"
               name="search-product"
               id="search-product"
-              className="inputBox placeholder:text-gray-300 focus:ring-2"
+              className="inputBox bg-black/10 dark:bg-gray-500 placeholder:text-gray-300 focus:ring-2"
               placeholder="Search product"
             />
             <span className="absolute right-2 top-1 text-xl text-gray-700">
@@ -31,7 +31,7 @@ const Stores = () => {
             <button
               type="button"
               id="filter-by"
-              className="btn rounded-md flex items-center bg-blue-600/40"
+              className="btn rounded-md flex items-center bg-blue-500 dark:bg-blue-600/40"
             >
               Filter by
               <span className="flex m-1">
@@ -63,7 +63,7 @@ const Stores = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 * index }}
                 key={index}
-                className="p-4 rounded-md bg-gray-500/40 hover:outline outline-blue-600 focus:outline-blue-600"
+                className="p-4 rounded-md bg-gray-50 dark:bg-gray-500/40 hover:outline outline-blue-600 focus:outline-blue-600"
               >
                 <div className="rounded-md overflow-hidden">
                   <img
@@ -82,10 +82,10 @@ const Stores = () => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: .5, delay: 0.7 }}
-            className="bg-gray-500/50 sm:w-[500px] w-full rounded-md p-3 px-5"
+            className="bg-gray-50 dark:bg-gray-500/50 sm:w-[500px] w-full rounded-md p-3 px-5 shadow-md dark:shadow-none"
           >
             <div className="flex justify-between items-center">
-              <h2 className="text-gray-200 text-xl">Manchester, UK</h2>
+              <h2 className="text-gray-600 dark:text-gray-200 text-xl">Manchester, UK</h2>
               <span className="text-xl text-gray-200 duration-300 hover:text-white ">
                 <ion-icon name="close-outline"></ion-icon>
               </span>
@@ -99,26 +99,26 @@ const Stores = () => {
             {/* information  */}
             <div className="flex items-center justify-between flex-wrap">
               <div className="">
-                <h3 className="text-gray-200">Employees: 23</h3>
-                <h3 className="text-gray-200">Items: 203</h3>
-                <h3 className="text-gray-200">Orders: 2</h3>
-                <h3 className="text-gray-200">Refunds: 1</h3>
+                <h3 className="text-gray-400 dark:text-gray-200">Employees: 23</h3>
+                <h3 className="text-gray-400 dark:text-gray-200">Items: 203</h3>
+                <h3 className="text-gray-400 dark:text-gray-200">Orders: 2</h3>
+                <h3 className="text-gray-400 dark:text-gray-200">Refunds: 1</h3>
               </div>
               <div>
                 {/* Employees  */}
-                <p className="text-gray-300 ">
+                <p className="text-gray-400 dark:text-gray-300 ">
                   Most sold Items: Unisex I-shirt white
                 </p>
                 {/* items  */}
-                <p className="text-gray-300 ">
+                <p className="text-gray-400 dark:text-gray-300 ">
                   Most popular category: T-shirts
                 </p>
                 {/* Orders */}
-                <p className="text-gray-300 text-sm ">
+                <p className="text-gray-400 dark:text-gray-300 text-sm ">
                   Customer satisfaction. 93%
                 </p>
                 {/* Refunds  */}
-                <p className="text-gray-300 ">Status Open</p>
+                <p className="text-gray-400 dark:text-gray-300 ">Status Open</p>
               </div>
             </div>
           </motion.div>

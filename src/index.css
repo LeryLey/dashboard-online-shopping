@@ -6,9 +6,7 @@
   .list {
     @apply text-gray-500 space-x-2 w-full hover:text-white hover:bg-gray-700/40  flex items-center px-10 py-2 mb-4;
   }
-  .topCategory {
-    @apply text-blue-600 bg-gray-500/40 p-2 py-3 flex items-center justify-center  text-xl rounded-md hover:bg-gray-300/30;
-  }
+
   .inputBox {
     @apply bg-gray-300/60  py-1 px-3 xl:w-80 w-60 duration-500 flex items-center justify-center rounded-md outline-none text-gray-600;
   }
@@ -19,3 +17,4 @@
     @apply text-gray-200 font-light h-14 border-b border-gray-500;
   }
 }
+

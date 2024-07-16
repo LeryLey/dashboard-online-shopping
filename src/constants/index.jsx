@@ -7,7 +7,7 @@ import Img from "/src/assets/images.jpeg";
 export const links = [
   {
     icon: (
-      <span className="bg-white/10 h-8 w-8 text-base flex rounded-full items-center justify-center text-purple-500">
+      <span className=" text-purple-500">
         <ion-icon name="timer"></ion-icon>
       </span>
     ),
@@ -16,7 +16,7 @@ export const links = [
   },
   {
     icon: (
-      <span className="bg-white/10 h-8 w-8 text-base flex rounded-full items-center justify-center text-orange-500">
+      <span className=" text-orange-500">
         <ion-icon name="shirt"></ion-icon>
       </span>
     ),
@@ -25,7 +25,7 @@ export const links = [
   },
   {
     icon: (
-      <span className="bg-white/10 h-8 w-8 text-base flex rounded-full items-center justify-center text-blue-500">
+      <span className=" text-blue-500">
         <ion-icon name="locate"></ion-icon>
       </span>
     ),
@@ -34,7 +34,7 @@ export const links = [
   },
   {
     icon: (
-      <span className="bg-white/10 h-8 w-8 text-base flex rounded-full items-center justify-center text-red-500">
+      <span className=" text-red-500">
         <ion-icon name="storefront"></ion-icon>
       </span>
     ),
@@ -43,7 +43,7 @@ export const links = [
   },
   {
     icon: (
-      <span className="bg-white/10 h-8 w-8 text-base flex rounded-full items-center justify-center text-purple-500">
+      <span className=" text-purple-500">
         <ion-icon name="fitness"></ion-icon>
       </span>
     ),
@@ -52,13 +52,14 @@ export const links = [
   },
   {
     icon: (
-      <span className="bg-white/10 h-8 w-8 text-base flex rounded-full items-center justify-center text-white">
-        <ion-icon name="cog"></ion-icon>
+      <span className=" text-yellow-500">
+        <ion-icon name="person"></ion-icon>
       </span>
     ),
-    title: "Settings",
-    path: "/setting",
+    title: "Customer",
+    path: "/customer",
   },
+
 ];
 export const items = [
   {

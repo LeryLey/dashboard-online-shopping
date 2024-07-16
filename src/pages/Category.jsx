@@ -20,7 +20,7 @@ const Category = () => {
           transition={{ duration: 1 }}
           className="space-y-2"
         >
-          <h1 className="text-3xl text-gray-200 duration-300">Categories</h1>
+          <h1 className="text-3xl text-gray-600 dark:text-gray-200 duration-300">Categories</h1>
           <p className="text-gray-400">
             Last update
             <span id="updateDate"> January 29, 2024 at 2:50 PM </span>
@@ -54,13 +54,13 @@ const Category = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 * index }}
-              className="w-full h-auto bg-gray-500/40 rounded-md p-4 hover:scale-[0.9] duration-300"
+              className="w-full h-auto bg-gray-50 dark:bg-gray-500/40 rounded-md p-4 hover:scale-[0.9] shadow-md duration-300"
             >
-              <div className="w-full p-10 bg-blue-300/40 flex justify-center items-center rounded-md mb-2">
+              <div className="w-full p-10 bg-gray-400 dark:bg-blue-300/40 flex justify-center items-center rounded-md mb-2">
                 <span className="text-gray-100 text-3xl">{icon}</span>
               </div>
-              <p className="text-white font-medium text-lg">{txt}</p>
-              <span className="text-gray-300">{qty} items</span>
+              <p className="text-gray-600 dark:text-white font-medium text-lg">{txt}</p>
+              <span className="text-gray-400 dark:text-gray-300">{qty} items</span>
             </motion.article>
           );
         })}

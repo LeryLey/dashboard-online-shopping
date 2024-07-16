@@ -18,8 +18,8 @@ const NavSide = () => {
       <div
         className={
           !navSide
-            ? "flex flex-col justify-between duration-500 bg-gray-900 shadow-md lg:w-72 w-52 md:translate-x-0 -translate-x-full md:relative absolute h-full py-10  top-0"
-            : "flex flex-col justify-between duration-500 bg-gray-900 shadow-md lg:w-72 w-52 h-full py-10 translate-x-0 md:relative absolute top-0"
+            ? "flex flex-col justify-between duration-500 bg-gray-50 dark:bg-gray-900 transition-all shadow-md lg:w-72 w-52 md:translate-x-0 -translate-x-full md:relative absolute h-full py-10  top-0"
+            : "flex flex-col justify-between duration-500 bg-gray-50 dark:bg-gray-900 transition-all shadow-md lg:w-72 w-52 h-full py-10 translate-x-0 md:relative absolute top-0"
         }
       >
         {/* btn close navSide  */}
@@ -36,11 +36,18 @@ const NavSide = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 * index }}
               key={index}
-              className="flex items-center px-4 py-1 hover:bg-gray-800 rounded-r-full duration-300 hover:pl-6 "
+              className="flex items-center px-4 py-1 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-r-full duration-300 hover:pl-6 "
             >
               <Link to={link.path} className="flex items-center gap-2 ">
-                <p>{link.icon}</p>
-                <h2 className="text-lg text-gray-300">{link.title}</h2>
+                <p
+                  className="bg-black/10 dark:bg-white/10 h-8 w-8 text-base flex rounded-full items-center justify-center
+"
+                >
+                  {link.icon}
+                </p>
+                <h2 className="text-lg text-gray-600  dark:text-gray-300">
+                  {link.title}
+                </h2>
               </Link>
             </motion.li>
           ))}
