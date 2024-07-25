@@ -63,7 +63,7 @@ const Stores = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 * index }}
                 key={index}
-                className="p-4 rounded-md bg-gray-50 dark:bg-gray-500/40 hover:outline outline-blue-600 focus:outline-blue-600"
+                className="p-4 rounded-md bg-gray-200 dark:bg-gray-500/40 hover:outline outline-blue-600 focus:outline-blue-600"
               >
                 <div className="rounded-md overflow-hidden">
                   <img
@@ -82,7 +82,7 @@ const Stores = () => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: .5, delay: 0.7 }}
-            className="bg-gray-50 dark:bg-gray-500/50 sm:w-[500px] w-full rounded-md p-3 px-5 shadow-md dark:shadow-none"
+            className="bg-gray-200 dark:bg-gray-500/50 sm:w-[500px] w-full rounded-md p-3 px-5 "
           >
             <div className="flex justify-between items-center">
               <h2 className="text-gray-600 dark:text-gray-200 text-xl">Manchester, UK</h2>

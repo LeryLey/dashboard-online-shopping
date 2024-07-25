@@ -54,7 +54,7 @@ const Category = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 * index }}
-              className="w-full h-auto bg-gray-50 dark:bg-gray-500/40 rounded-md p-4 hover:scale-[0.9] shadow-md duration-300"
+              className="w-full h-auto bg-gray-50 dark:bg-gray-500/40 rounded-md p-4 outline-transparent hover:outline hover:outline-blue-500 shadow-md duration-300"
             >
               <div className="w-full p-10 bg-gray-400 dark:bg-blue-300/40 flex justify-center items-center rounded-md mb-2">
                 <span className="text-gray-100 text-3xl">{icon}</span>

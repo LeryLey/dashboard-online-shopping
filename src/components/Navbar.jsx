@@ -47,7 +47,7 @@ const Navbar = () => {
               placeholder="Search"
               className="border-2 border-transparent rounded-md outline-none px-2 py-1 sm:w-72 focus:border-blue-600 duration-300 bg-black/10 dark:bg-gray-500 text-white "
             />
-            <span className="absolute right-2">
+            <span className="absolute right-2 text-gray-400 dark:text-gray-300">
               <ion-icon name="search-outline"></ion-icon>
             </span>
           </form>

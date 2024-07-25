@@ -1,33 +1,52 @@
 import { IoMdSave } from "react-icons/io";
 import { FaChevronDown } from "react-icons/fa6";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { fadeInUp } from "../constants";
 import { stagger } from "../constants";
-const AddProduct = () => {
+
+const EditProduct = () => {
   const navigate = useNavigate();
   const gotoProduct = () => {
     navigate("/product");
   };
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [input, setInput] = useState([]);
+
+  const { id } = useParams();
+
+  const getProducts = () => {
+    axios
+      .get(`http://localhost/build_api/api_products/${id}`)
+      .then((res) => {
+        setInput(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost/build_api/api_products/create", input)
+      .put(`http://localhost/build_api/api_products/${id}/edit`, input)
       .then((res) => {
         if (res.data.success === 1) {
           alert(res.data.message);
           gotoProduct();
         } else {
           alert(res.data.error);
-          console.log(res.data) 
         }
       })
       .catch((err) => {
@@ -42,7 +61,7 @@ const AddProduct = () => {
       >
         <div className="w-full h-full  rounded-xl  overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-track-rounded-full p-4 ">
           <h2 className="text-xl font-medium text-gray-600 dark:text-gray-100 text-center">
-            Add Product
+            Edit Product
           </h2>
           {/* form  */}
           <motion.form
@@ -60,6 +79,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="product_name"
+                value={input.product_name}
                 onChange={handleChange}
                 placeholder="Example"
                 className="px-2 py-1 rounded-md bg-gray-200 dark:bg-black/40 w-full outline-none text-gray-500 dark:text-gray-300 placeholder:text-gray-400/70 dark:placeholder:text-gray-500 focus:border-blue-500 duration-300 border-2 border-transparent"
@@ -73,6 +93,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="color"
+                value={input.color}
                 onChange={handleChange}
                 id="color"
                 placeholder="Example: black..."
@@ -99,6 +120,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="price"
+                value={input.price}
                 onChange={handleChange}
                 placeholder="00.0"
                 className="px-2 py-1 rounded-md bg-gray-200 dark:bg-black/40 w-full outline-none text-gray-500 dark:text-gray-300 placeholder:text-gray-400/70 dark:placeholder:text-gray-500 focus:border-blue-500 duration-300 border-2 border-transparent"
@@ -112,6 +134,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="category"
+                value={input.category}
                 onChange={handleChange}
                 id="category"
                 placeholder="Example: T-Shirt"
@@ -126,6 +149,7 @@ const AddProduct = () => {
               <br />
               <textarea
                 name="description"
+                value={input.description}
                 onChange={handleChange}
                 id="description"
                 rows={4}
@@ -161,4 +185,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default EditProduct;

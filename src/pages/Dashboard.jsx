@@ -42,7 +42,7 @@ const Home = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.5 }}
           id="sales"
-          className="bg-gray-100 dark:bg-black/30 w-full h-auto  rounded-md p-4 relative"
+          className="bg-gray-200 dark:bg-black/30 w-full h-auto  rounded-md p-4 relative"
         >
           <h2 className="text-gray-600 dark:text-gray-200 text-xl font-medium">
             Sales
@@ -59,7 +59,7 @@ const Home = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.5 }}
           id="topItems"
-          className="bg-gray-100 dark:bg-black/30 w-full h-auto rounded-md p-4 space-y-4 "
+          className="bg-gray-200 dark:bg-black/30 w-full h-auto rounded-md p-4 space-y-4 "
         >
           <div className=" flex justify-between ">
             <h2 className="text-gray-600 dark:text-gray-200 font-medium text-xl">
@@ -95,7 +95,7 @@ const Home = () => {
       >
         <div
           id="stockNumber"
-          className="bg-gray-100 dark:bg-black/30 w-[] h-auto rounded-md p-3"
+          className="bg-gray-200 dark:bg-black/30 w-[] h-auto rounded-md p-3"
         >
           <h2 className="text-blue-600 text-xl mb-2">Stock numbers</h2>
           <div className="space-y-3">
@@ -140,7 +140,7 @@ const Home = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 2 }}
           id="storeList"
-          className="bg-gray-100 dark:bg-black/30 w-full h-auto rounded-md p-3"
+          className="bg-gray-200 dark:bg-black/30 w-full h-auto rounded-md p-3"
         >
           <h2 className="text-blue-600 text-xl mb-2">Store List</h2>
           <div className="space-y-3">
